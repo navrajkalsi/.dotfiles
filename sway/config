@@ -1,0 +1,186 @@
+include /etc/sway/config-vars.d/*
+include /etc/sway/config.d/*
+
+### Variables
+# Window & Right Alt keys
+set $mod Mod4
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term ghostty
+
+set $menu wofi | xargs swaymsg exec --
+
+# For 'open' mode
+set $open Launch: [b]rave, [g]hostty, [n]autilus
+
+# Color Vars
+set $cl_high #ffffff
+set $cl_indi #1E1E1E
+set $cl_back #1E1E1E
+set $cl_fore #ffffff
+set $cl_urge #ffffff
+
+### Styling
+font CascadiaMono 12
+
+# Colors                border   bg       text     indi     childborder
+client.focused          $cl_high $cl_high $cl_fore $cl_indi $cl_high
+client.focused_inactive $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
+client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
+
+default_border pixel 3
+hide_edge_borders smart
+
+### Output configuration
+output * bg /mnt/files/Wallpapers/peakpxss.jpg fill
+output * resolution 1920x1080 position 1920 0
+
+### Input configuration
+# For Right alt to work
+input type:keyboard {
+    xkb_file "~/.config/xkb/symbols/custom"
+}
+
+input "1267:228:Elan_Touchpad" {
+  tap enabled
+  click_method clickfinger
+  natural_scroll enabled
+}
+
+### Key bindings
+    bindsym $mod+Return exec $term
+    bindsym $mod+q kill
+    bindsym $mod+d exec $menu
+    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'Sure?' -B 'Yes, exit sway' 'swaymsg exit'
+
+  #Moving around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+
+# Workspaces:
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+
+# Layout stuff:
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    bindsym $mod+f fullscreen
+    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space focus mode_toggle
+    bindsym $mod+a focus parent
+
+# Scratchpad:
+    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+minus scratchpad show
+# Toggle to tiling after showing window from scratchpad
+
+# Resizing containers:
+    bindsym $mod+r mode "resize"
+mode "resize" {
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+
+    bindsym $left resize shrink width 25px
+    bindsym $down resize grow height 25px
+    bindsym $up resize shrink height 25px
+    bindsym $right resize grow width 25px
+    bindsym Shift+$left resize shrink width 100px
+    bindsym Shift+$down resize grow height 100px
+    bindsym Shift+$up resize shrink height 100px
+    bindsym Shift+$right resize grow width 100px
+
+    bindsym Left resize shrink width 25px
+    bindsym Down resize grow height 25px
+    bindsym Up resize shrink height 25px
+    bindsym Right resize grow width 25px
+    bindsym Shift+Left resize shrink width 100px
+    bindsym Shift+Down resize grow height 100px
+    bindsym Shift+Up resize shrink height 100px
+    bindsym Shift+Right resize grow width 100px
+}
+
+# Open Mode
+    bindsym $mod+o mode "$open"
+mode "$open" {
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+
+    bindsym t exec ghostty; mode "default"
+    bindsym b exec brave; mode "default"
+    bindsym e exec nautilus --browser; mode "default"
+    # Shift to open in prefered workspace
+    bindsym Shift+t workspace 1; exec ghostty; mode "default"
+    bindsym Shift+b workspace 2; exec brave; mode "default"
+    bindsym Shift+e workspace 3; exec nautilus --browser; mode "default"
+}
+
+### New Binds
+# Audio, requires pactl
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Shift+XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym Shift+XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+# Brightnes, requires brightnessctl
+bindsym XF86MonBrightnessUp exec sudo brightnessctl s +10%
+bindsym XF86MonBrightnessDown exec sudo brightnessctl s 10%-
+bindsym Shift+XF86MonBrightnessUp exec sudo brightnessctl s +5%
+bindsym Shift+XF86MonBrightnessDown exec sudo brightnessctl s 5%-
+# Screenshot, requires grim(for full screenshot), slurp(window selection)
+bindsym Print exec grim ~/Downloads/screenshot-"$(date +%F-%T)".png
+bindsym Shift+Print exec grim -g "$(slurp)" ~/Downloads/screenshot-"$(date +%F-%T)".png
+
+# Status Bar:
+bar {
+  swaybar_command waybar
+}
+

@@ -1,0 +1,42 @@
+* {
+  font-family: Cascadia Mono;
+  font-size: 16px;
+  color: #d4d4d4;
+  background-color: #1e1e1e;
+}
+
+#bluetooth,
+#workspaces button {
+  margin: 2px;
+  padding: 5px 10px;
+  background: transparent;
+  border: none;
+  color: #d4d4d4;
+}
+
+#bluetooth.on,
+#workspaces button.focused {
+  border: 3px solid #d4d4d4;
+  border-radius: 10px;
+}
+
+#clock,
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery {
+  padding: 0 10px;
+}
+
+#battery.charging,
+#pulseaudio.muted,
+#network.disconnected {
+  padding: 0;
+}
+
+#battery.warning {
+  background-color: red;
+}

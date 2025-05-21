@@ -1,0 +1,9 @@
+[user]
+	name = Navraj Kalsi
+	email = navrajkalsi@icloud.com
+[credential]
+	helper = cache
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main

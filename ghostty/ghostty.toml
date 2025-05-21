@@ -1,0 +1,14 @@
+[colors]
+background = "FF333337"
+foreground = "FFFFFFFF"
+cursor = "FFFFFFFF"
+selection-background = "FFFFFFFF"
+selection-foreground = "FF333337"
+
+palette = [
+  "FF1E1E1E", "FFD75F5F", "FF5FD75F", "FFD7D75F",
+  "FF5F5FD7", "FFD75FD7", "FF5FD7D7", "FFE4E4E4",
+  "FF4C4C4C", "FFFF8787", "FF87FF87", "FFFFFF87",
+  "FF8787FF", "FFFF87FF", "FF87FFFF", "FFFFFFFF"
+]
+

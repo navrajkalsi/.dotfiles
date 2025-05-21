@@ -1,0 +1,56 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": ["cpu", "memory", "sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["bluetooth", "network", "pulseaudio", "backlight", "battery"],
+
+  "sway/workspaces": {
+    "disable-scroll": true
+  },
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}"
+  },
+
+  "network": {
+    "format": " ",
+    "format-wifi": "{essid}",
+    "format-ethernet": "🖧 {ifname}",
+    "on-click": " ghostty -e nmtui"
+  },
+
+  "cpu": {
+    "format": "CPU {usage}%"
+  },
+
+  "memory": {
+    "format": "RAM {used:0.1f}G"
+  },
+
+  "pulseaudio": {
+    "format": "VOLUME {volume}%",
+    "format-muted": ""
+  },
+
+  "backlight": {
+    "format": "BRIGHTNESS {percent}%"
+  },
+
+  "battery": {
+    "format": "BATTERY {capacity}%",
+    "format-charging": "",
+    "interval": 1,
+    "states": {
+      "warning": 5,
+    },
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "on-click": "~/.config/waybar/custom/bluetoothToggle.sh",
+  }
+}
+
