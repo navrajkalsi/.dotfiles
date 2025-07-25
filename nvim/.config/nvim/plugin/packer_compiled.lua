@@ -92,6 +92,11 @@ _G.packer_plugins = {
     path = "/home/navrajkalsi/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim",
     url = "https://github.com/nvimdev/lspsaga.nvim"
   },
+  ["markdown.nvim"] = {
+    loaded = true,
+    path = "/home/navrajkalsi/.local/share/nvim/site/pack/packer/start/markdown.nvim",
+    url = "https://github.com/OXY2DEV/markdown.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/home/navrajkalsi/.local/share/nvim/site/pack/packer/start/mason.nvim",

@@ -2,7 +2,7 @@
 	name = Navraj Kalsi
 	email = navrajkalsi@icloud.com
 [credential]
-	helper = cache
+	helper = store
 [core]
 	editor = nvim
 [init]

@@ -39,6 +39,7 @@ vim.o.scrolloff = 10
 vim.opt.list = true
 
 vim.opt.listchars = {
+  tab = "→ ",
   lead = "·",
   trail = "·",
   nbsp = "␣"
@@ -51,8 +52,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({ async = false })
   end,
 })
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  callback = function()
+    vim.cmd("")
+  end,
+})
+
 -- Telescope File Browser
 --vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "#252526" })
 --vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#007ACC" })
 --vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#1E1E1E" })
 --vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#373737", fg = "#FFFFFF" })
+vim.opt.laststatus = 0
+vim.opt.cmdheight = 0

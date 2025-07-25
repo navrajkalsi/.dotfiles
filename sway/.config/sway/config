@@ -15,7 +15,7 @@ set $term ghostty
 set $menu wofi | xargs swaymsg exec --
 
 # For 'open' mode
-set $open Launch: [b]rave, [g]hostty, [n]autilus
+set $open Launch: [f]irefox, [g]hostty, [n]autilus
 
 # Color Vars
 set $cl_high #ffffff
@@ -37,7 +37,7 @@ default_border pixel 3
 hide_edge_borders smart
 
 ### Output configuration
-output * bg /mnt/files/Wallpapers/peakpxss.jpg fill
+output * bg ~/.config/.dotfiles/wallpaper.jpg fill
 output * resolution 1920x1080 position 1920 0
 
 ### Input configuration
@@ -155,11 +155,11 @@ mode "$open" {
     bindsym Escape mode "default"
 
     bindsym t exec ghostty; mode "default"
-    bindsym b exec brave; mode "default"
+    bindsym b exec firefox; mode "default"
     bindsym e exec nautilus --browser; mode "default"
     # Shift to open in prefered workspace
     bindsym Shift+t workspace 1; exec ghostty; mode "default"
-    bindsym Shift+b workspace 2; exec brave; mode "default"
+    bindsym Shift+b workspace 2; exec firefox; mode "default"
     bindsym Shift+e workspace 3; exec nautilus --browser; mode "default"
 }
 
@@ -178,6 +178,12 @@ bindsym Shift+XF86MonBrightnessDown exec sudo brightnessctl s 5%-
 # Screenshot, requires grim(for full screenshot), slurp(window selection)
 bindsym Print exec grim ~/Downloads/screenshot-"$(date +%F-%T)".png
 bindsym Shift+Print exec grim -g "$(slurp)" ~/Downloads/screenshot-"$(date +%F-%T)".png
+# Lockscreen
+bindsym Mod1+Shift+l exec swaylock --image ~/.config/.dotfiles/wallpaper.jpg -e --indicator-idle-visible \
+--ring-color 1111111 --key-hl-color 000000 --ring-wrong-color ff0000
+# FZF
+bindsym $mod+Shift+t workspace 1; exec ghostty -e "cd $(find . -type d -print | fzf) && tmux"
+bindsym $mod+t exec ghostty -e "cd $(find . -type d -print | fzf) && tmux"
 
 # Status Bar:
 bar {

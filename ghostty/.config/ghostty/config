@@ -19,4 +19,4 @@ selection-background = #FFFFFF
 selection-foreground = #1e1e1e
 window-decoration = false
 window-height = 100
-window-width = 215
+window-width = 100

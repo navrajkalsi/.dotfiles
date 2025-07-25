@@ -52,4 +52,6 @@ return require('packer').startup(function(use)
   }
 
   use 'tpope/vim-commentary'
+
+  use 'OXY2DEV/markview.nvim'
 end)

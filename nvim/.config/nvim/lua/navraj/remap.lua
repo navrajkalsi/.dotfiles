@@ -12,8 +12,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
 -- Copying & pasting
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+Y]])
-vim.keymap.set({ "n", "v" }, "<leader>p", [["+P]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -35,3 +35,16 @@ vim.keymap.set("n", "m", ":Lspsaga code_action<CR>", { silent = true, noremap = 
 vim.keymap.set("n", "<leader>tt", ":term<CR>i", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>twd", ":term<CR>icd " .. vim.fn.expand('%:p:h') .. " <CR>clear<CR>",
   { silent = true, noremap = true })
+
+vim.keymap.set("n", "<leader>fo", vim.cmd.foldopen)
+vim.keymap.set("n", "<leader>fc", vim.cmd.foldclose)
+
+-- Open all folds
+vim.keymap.set("n", "<leader>fO", function()
+  vim.cmd("normal! zR")
+end, { desc = "Open all folds" })
+
+-- Close all folds
+vim.keymap.set("n", "<leader>fC", function()
+  vim.cmd("normal! zM")
+end, { desc = "Close all folds" })
