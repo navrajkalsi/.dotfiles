@@ -37,7 +37,7 @@ default_border pixel 3
 hide_edge_borders smart
 
 ### Output configuration
-output * bg ~/.config/.dotfiles/wallpaper.jpg fill
+output * bg ~/.dotfiles/wallpaper.jpg fill
 output * resolution 1920x1080 position 1920 0
 
 ### Input configuration
