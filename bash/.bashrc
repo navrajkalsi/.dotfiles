@@ -128,16 +128,21 @@ alias tls='tmux ls'
 alias ll='ls -alF'
 alias la='ls -A'
 
-# Set up fzf key bindings and fuzzy completion
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/bash-completion/completions/fzf
-source ~/.config/fzf/key-bindings.bash
-source ~/.config/fzf/completion.bash
-
-alias bat='batcat'
-alias fzff='fzf --preview="batcat --color=always {}"'
-
 export EMSDK_QUIET=1
 source /opt/emsdk/emsdk_env.sh
 
-export PATH=$PATH:/home/navrajkalsi/.local/lib
+export PATH=$PATH:/home/navrajkalsi/.local/bin
+
+# Setting up zoxide as 'cd'
+eval "$(zoxide init bash --cmd cd)"
+
+# fzf integration
+# Installed by cloning repo and executing install.sh
+# Then manually moving the files in the new bin dir to ./local/bin cause it is on the path
+eval "$(fzf --bash)"
+source "$HOME/.config/fzf/fzf.bash"
+
+. "$HOME/.cargo/env"
+
+# For Alacritty and any other bash scripts
+source ~/.bash_scripts/*
