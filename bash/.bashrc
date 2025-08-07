@@ -144,5 +144,6 @@ source "$HOME/.config/fzf/fzf.bash"
 
 . "$HOME/.cargo/env"
 
-# For Alacritty and any other bash scripts
-source ~/.bash_scripts/*
+alias cat='batcat'
+
+# /usr/bin/fastfetch
