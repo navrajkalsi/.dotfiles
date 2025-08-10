@@ -4,4 +4,4 @@ height=500px
 prompt=
 allow_images=false
 hide_scroll=true
-key_exit=Control_L
+key_exit=Alt_R

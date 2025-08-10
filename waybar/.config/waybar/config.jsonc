@@ -1,22 +1,21 @@
 {
   "layer": "top",
   "position": "bottom",
-  "modules-left": ["cpu", "memory", "sway/workspaces"],
+  "modules-left": ["cpu", "memory", "hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["bluetooth", "network", "pulseaudio", "backlight", "battery"],
 
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": true
   },
 
   "clock": {
-    "format": "{:%Y-%m-%d %H:%M}"
+    "format": "{:%d - %H:%M}"
   },
 
   "network": {
     "format": " ",
-    "format-wifi": "{essid}",
-    "format-ethernet": "🖧 {ifname}",
+    "format-ethernet": " ",
     "on-click": " ghostty -e nmtui"
   },
 
@@ -29,17 +28,16 @@
   },
 
   "pulseaudio": {
-    "format": "VOLUME {volume}%",
-    "format-muted": ""
+    "format": "  {volume}%",
+    "format-muted": ""
   },
 
   "backlight": {
-    "format": "BRIGHTNESS {percent}%"
+    "format": "  {percent}%"
   },
 
   "battery": {
-    "format": "BATTERY {capacity}%",
-    "format-charging": "",
+    "format": "  {capacity}%",
     "interval": 1,
     "states": {
       "warning": 5,
@@ -48,9 +46,6 @@
 
   "bluetooth": {
     "format": "",
-    "format-connected": " {device_alias}",
-    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
     "on-click": "~/.config/waybar/custom/bluetoothToggle.sh",
   }
 }
-

@@ -20,3 +20,4 @@ selection-foreground = #1e1e1e
 window-decoration = false
 window-height = 100
 window-width = 100
+# background-opacity = 0.9

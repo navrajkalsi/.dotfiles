@@ -3,7 +3,7 @@ export FZF_COMPLETION_TRIGGER="''"
 
 export FZF_DEFAULT_OPTS="\
   --style full \
-  --preview 'batcat --color=always {}' \
+  --preview 'bat --color=always {}' \
   --border --padding 1,2 \
   --header-label ' File Type '\
   --bind 'result:transform-list-label:
@@ -31,7 +31,7 @@ _fzf_comprun() {
     cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
     export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
     ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview 'batcat -n --color=always {}' "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
   esac
 }
 # export FZF_MOVEMENT="--bind='ctrl-s:preview-page-down' \
