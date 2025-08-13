@@ -20,7 +20,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 
 vim.opt.updatetime = 50
 
@@ -66,3 +66,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 --vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#373737", fg = "#FFFFFF" })
 vim.opt.laststatus = 0
 vim.opt.cmdheight = 0
+
+-- Removing ~ from end of file
+vim.opt.fillchars = "eob: "

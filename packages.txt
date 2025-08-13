@@ -1,0 +1,23 @@
+nvim
+man
+lsd
+zoxide
+git
+stow
+fzf
+wofi
+bat
+waybar
+ghostty
+tree
+hyprpaper
+hyprlock
+tmux
+fastfetch
+vlc
+vlc-plugins-all
+nwg-look
+ntfs-3g (For write access to hard drive)
+nodejs
+npm
+gdb
