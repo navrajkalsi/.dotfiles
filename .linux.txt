@@ -9,3 +9,7 @@ bluetoothctl: Bluetooth Devices Connect
 stow: Takes a directory from .dotfiles and adds it to user home with the last files being a symlink
 
 wev: Know what key was pressed
+
+ntfs-3g: Write access for hard drives
+
+gvfs-mtp: Android connection

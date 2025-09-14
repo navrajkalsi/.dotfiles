@@ -24,19 +24,9 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  use {
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    config = function()
-      vim.cmd('colorscheme rose-pine')
-    end
-  }
-
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
   use 'Mofiqul/vscode.nvim'
-
-  use 'mfussenegger/nvim-jdtls'
 
   use({
     'nvimdev/lspsaga.nvim',
@@ -53,5 +43,9 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-commentary'
 
-  use 'OXY2DEV/markview.nvim'
+  -- use 'OXY2DEV/markview.nvim'
+
+  use { 'nvim-treesitter/nvim-treesitter-context',
+    requires = { 'nvim-treesitter/nvim-treesitter' }
+  }
 end)

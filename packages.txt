@@ -17,7 +17,10 @@ fastfetch
 vlc
 vlc-plugins-all
 nwg-look
-ntfs-3g (For write access to hard drive)
+ntfs-3g
 nodejs
 npm
 gdb
+libmtp
+gvfs-mtp
+wf-recorder
