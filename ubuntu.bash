@@ -6,11 +6,11 @@ ORG_DIR=$(pwd);
 # Package manager stuff
 printf "\nInstalling Packages\n"
 sudo apt update
-sudo apt install build-essential cmake stow -y
+sudo apt install build-essential cmake stow -y lsd
 
 # .dotfiles
 printf "\nMoving .bashrc\n"
-mv "$HOME/.bashrc "$HOME/.bashrc-org
+mv "$HOME/.bashrc" "$HOME/.bashrc-org"
 printf "\nStowing configs\n"
 stow bash nvim tmux fzf dircolors git
 
@@ -33,7 +33,7 @@ git clone https://github.com/junegunn/fzf.git "$HOME/navraj/fzf" --depth 1
 
 # Zoxide
 printf "\nInstalling Zoxide\n"
-curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sudo sh
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 printf "\nSourcing new bashrc\n"
 source "$HOME/.bashrc"
