@@ -15,7 +15,8 @@ shopt -s histappend
 
 alias ls='lsd'
 alias vim='nvim'
-alias ta='tmux a'
+alias ta='tmux attach'
+alias td='tmux detach'
 alias tls='tmux ls'
 alias ll='ls -alF'
 alias la='ls -A'
