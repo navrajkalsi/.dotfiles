@@ -29,13 +29,15 @@ git clone https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site
 # Fzf
 printf "\nInstalling Fzf\n"
 git clone https://github.com/junegunn/fzf.git $HOME/navraj/fzf --depth 1
-$HOME/navraj/fzf/install
+sudo mv $HOME/navraj/fzf/bin/* /usr/local/bin
+sudo mkdir -p /usr/local/share/man/man1 && sudo mv $HOME/navraj/fzf/man/man1/* /usr/local/share/man/man1
+# $HOME/navraj/fzf/install
 
 # Zoxide
 printf "\nInstalling Zoxide\n"
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
-mv $HOME/.local/bin/zoxide /usr/local/bin
-mkdir -p /usr/local/share/man/man1 && mv $HOME/.local/share/man/man1/zoxide* /usr/local/share/man/man1
+sudo mv $HOME/.local/bin/zoxide /usr/local/bin
+sudo mkdir -p /usr/local/share/man/man1 && sudo mv $HOME/.local/share/man/man1/* /usr/local/share/man/man1
 
 printf "\nSourcing new bashrc\n"
 source $HOME/.bashrc
@@ -50,4 +52,4 @@ else
     rm -rf $HOME/navraj
 fi
 
-printf "\nDone."
+printf "\nDone.\n\n"
