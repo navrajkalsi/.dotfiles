@@ -29,9 +29,9 @@ git clone https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site
 # Fzf
 printf "\nInstalling Fzf\n"
 git clone https://github.com/junegunn/fzf.git $HOME/navraj/fzf --depth 1
+printf "n\nn\nn" | $HOME/navraj/fzf/install # generates the fzf binary, do not need the bash integration, there is a config file
 sudo mv $HOME/navraj/fzf/bin/* /usr/local/bin
 sudo mkdir -p /usr/local/share/man/man1 && sudo mv $HOME/navraj/fzf/man/man1/* /usr/local/share/man/man1
-# $HOME/navraj/fzf/install
 
 # Zoxide
 printf "\nInstalling Zoxide\n"
