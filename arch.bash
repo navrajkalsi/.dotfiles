@@ -11,7 +11,7 @@ ORG_DIR=$(pwd);
 
 # Package Manager
 printf "\nInstalling Packages\n"
-sudo pacman -Syu --noconfirm base-devel nvim cmake stow lsd zoxide tree fzf tmux
+sudo pacman -Syu --noconfirm base-devel nvim cmake stow lsd zoxide tree fzf tmux fastfetch
 
 # .dotfiles
 printf "\nMoving .bashrc\n"
