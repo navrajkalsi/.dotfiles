@@ -1,9 +1,15 @@
 #!/bin/bash
 
+# Sudo access
+if ! sudo true; then
+    echo "Error: sudo"
+    exit 1
+fi
+
 # Run after cloning .dotfiles, from .dotfiles
 ORG_DIR=$(pwd);
 
-# Package manager stuff
+# Package Manager
 printf "\nInstalling Packages\n"
 sudo apt update
 sudo apt install -y build-essential cmake stow lsd tree
