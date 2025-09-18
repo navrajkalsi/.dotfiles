@@ -6,7 +6,7 @@ ORG_DIR=$(pwd);
 # Package manager stuff
 printf "\nInstalling Packages\n"
 sudo apt update
-sudo apt install build-essential cmake stow -y lsd
+sudo apt install -y build-essential cmake stow lsd tree
 
 # .dotfiles
 printf "\nMoving .bashrc\n"

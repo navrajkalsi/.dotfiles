@@ -24,3 +24,4 @@ gdb
 libmtp
 gvfs-mtp
 wf-recorder
+cmake
