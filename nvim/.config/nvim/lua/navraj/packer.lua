@@ -48,4 +48,9 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter-context',
     requires = { 'nvim-treesitter/nvim-treesitter' }
   }
+
+  use {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async'
+  }
 end)

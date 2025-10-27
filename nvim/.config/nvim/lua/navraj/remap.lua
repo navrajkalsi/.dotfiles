@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", ":Telescope file_browser path=%:p:h select_buffer=false<CR>")
+vim.keymap.set("n", "<leader>d", ":Telescope file_browser path=%:p:h select_buffer=false<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
