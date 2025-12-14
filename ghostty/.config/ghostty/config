@@ -21,3 +21,4 @@ window-decoration = false
 window-height = 100
 window-width = 100
 # background-opacity = 0.9
+app-notifications = "no-clipboard-copy"
