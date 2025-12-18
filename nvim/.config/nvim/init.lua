@@ -1,3 +1,3 @@
-require("navrajkalsi.lazy")
-require("navrajkalsi.options")
-require("navrajkalsi.keymaps")
+require("keymaps")
+require("options")
+require("manager")

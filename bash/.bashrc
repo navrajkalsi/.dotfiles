@@ -21,6 +21,7 @@ alias tls='tmux ls'
 alias ll='ls -alF'
 alias la='ls -A'
 alias cat='bat'
+alias c='clear'
 alias snvim='sudo -E -s nvim'
 
 # Setting up zoxide as 'cd'
@@ -33,3 +34,9 @@ eval "$(fzf --bash)"
 source "$HOME/.config/fzf/fzf.bash"
 
 /usr/bin/fastfetch
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+bind -r "\C-t" : clear_screen
