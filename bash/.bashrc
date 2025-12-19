@@ -1,11 +1,6 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 PS1='\n\[\e[1;1m\]\u \w\[\e[0m\]\n'
@@ -15,6 +10,7 @@ shopt -s histappend
 
 alias ls='lsd'
 alias vim='nvim'
+alias vi='nvim'
 alias ta='tmux attach'
 alias td='tmux detach'
 alias tls='tmux ls'
@@ -39,4 +35,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-bind -r "\C-t" : clear_screen
+# sourcing scripts dir
+# for file in ~/.config/scripts/*; do
+#   source "$file"
+# done
+bind -f ~/.inputrc
