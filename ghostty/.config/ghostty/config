@@ -23,4 +23,6 @@ window-width = 100
 # background-opacity = 0.9
 app-notifications = "no-clipboard-copy"
 
+# just one keybind for terminal emulator
 keybind = clear
+keybind = ctrl+enter=toggle_fullscreen
