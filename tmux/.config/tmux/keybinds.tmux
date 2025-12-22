@@ -25,7 +25,6 @@ set-option -g prefix M-m
 bind M-m send-prefix
 
 # reload config
-unbind r
 bind r source-file ~/.config/tmux/tmux.conf \; display-message "Reloaded Config"
 
 # list keybinds
@@ -33,6 +32,7 @@ bind ? list-keys
 
 # server
 bind Q confirm-before -c Y -p "Kill Server?" kill-server
+bind w choose-tree
 
 # session
 bind q confirm-before -c Y -p "Kill Session?" kill-session
