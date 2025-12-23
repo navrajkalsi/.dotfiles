@@ -20,6 +20,7 @@ alias la='ls -A'
 alias cat='bat'
 alias c='clear'
 alias snvim='sudo -E -s nvim'
+alias rm='rm -i' # thank yourself later
 
 # Setting up zoxide as 'cd'
 eval "$(zoxide init bash --cmd cd)"
