@@ -1,4 +1,31 @@
-# set editing-mode vi
-# set show-mode-in-prompt on
-# set vi-cmd-mode-string "(n) "
-# set vi-ins-mode-string ""
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-cmd-mode-string "(n) "
+set vi-ins-mode-string ""
+
+set colored-stats on
+
+# following binds will work in insert mode
+set keymap vi-insert
+
+";;": vi-movement-mode
+
+# used for pane switching by vim navigator
+"\C-l":
+"\C-o": clear-screen
+
+# some emacs bindings also for vi mode
+"\C-p": previous-history
+"\C-n": next-history
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+"\C-b": backward-word
+"\C-f": forward-word
+"\C-w": kill-word
+
+# following binds will work in normal mode
+set keymap vi-command
+
+"gg": beginning-of-history
+"G": end-of-history
+"q": "GA"

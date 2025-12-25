@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias grep='grep --color=auto'
-
 PS1='\n\[\e[1;1m\]\u \w\[\e[0m\]\n'
 
 # append to the history file, don't overwrite it
@@ -21,6 +19,9 @@ alias cat='bat'
 alias c='clear'
 alias snvim='sudo -E -s nvim'
 alias rm='rm -i' # thank yourself later
+alias grep='grep --color=auto'
+alias bc='bluetoothctl'
+alias nt='nmtui'
 
 # Setting up zoxide as 'cd'
 eval "$(zoxide init bash --cmd cd)"
