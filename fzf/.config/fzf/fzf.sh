@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 export FZF_COMPLETION_TRIGGER="**"
 
 export FZF_DEFAULT_OPTS="\

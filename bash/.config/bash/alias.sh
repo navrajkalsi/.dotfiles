@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+alias ls='lsd'
+alias vim='nvim'
+alias vi='nvim'
+alias ta='tmux attach'
+alias td='tmux detach'
+alias tls='tmux ls'
+alias tks='tmux kill-server'
+alias ts='tmux-sessionizer'
+alias ll='ls -alF'
+alias la='ls -A'
+alias cat='bat'
+alias c='clear'
+alias snvim='sudo -E -s nvim'
+alias rm='rm -i' # thank yourself later
+alias grep='grep --color=auto'
+alias bc='bluetoothctl'
+alias nt='nmtui'
