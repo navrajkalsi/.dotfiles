@@ -10,8 +10,10 @@ bat
 waybar
 ghostty
 tree
+hyprland
 hyprpaper
 hyprlock
+hypridle
 tmux
 fastfetch
 vlc
