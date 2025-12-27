@@ -8,6 +8,9 @@ PS1='\n\[\e[1;1m\]\u \w\[\e[0m\]\n'
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# make ctrl+s avaliable for binding
+stty -ixon
+
 # Setting up zoxide as 'cd'
 eval "$(zoxide init bash --cmd cd)"
 
