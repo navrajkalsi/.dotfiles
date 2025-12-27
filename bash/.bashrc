@@ -13,6 +13,7 @@ alias ta='tmux attach'
 alias td='tmux detach'
 alias tls='tmux ls'
 alias tks='tmux kill-server'
+alias ts='tmux-sessionizer'
 alias ll='ls -alF'
 alias la='ls -A'
 alias cat='bat'
@@ -38,8 +39,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# sourcing scripts dir
-# for file in ~/.config/scripts/*; do
-#   source "$file"
-# done
+# prevents C-d to exit the terminal
+export IGNOREEOF=10
+
+# readline bindings
 bind -f ~/.inputrc
+
+bind -m emacs -x '"\C-s": tmux-sessionizer'
+bind -m vi-insert -x '"\C-s": tmux-sessionizer'
+bind -m vi-command -x '"\C-s": tmux-sessionizer'

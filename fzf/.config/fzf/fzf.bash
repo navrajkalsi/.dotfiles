@@ -1,5 +1,5 @@
 #!/bin/bash
-export FZF_COMPLETION_TRIGGER="''"
+export FZF_COMPLETION_TRIGGER="**"
 
 export FZF_DEFAULT_OPTS="\
   --style full \
@@ -22,6 +22,9 @@ export FZF_DEFAULT_OPTS="\
     --color 'input-border:#996666,input-label:#ffcccc' \
     --color 'header-border:#6699cc,header-label:#99ccff'
 "
+
+# disabling pasting files and dirs onto cmd line
+export FZF_CTRL_T_COMMAND=""
 
 _fzf_comprun() {
   local command=$1

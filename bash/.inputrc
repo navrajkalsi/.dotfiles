@@ -1,3 +1,14 @@
+# these key binds are only meant to be for readline funcitons
+# these binds cannot execute commands
+# use bind -x in .bashrc
+#
+# cannot use ctrl-d and ctrl-i
+# c-d is used for sending eof
+# c-i is used for sending tab
+# also do not use c-m
+#
+# \e is both escape and alt
+
 set editing-mode vi
 set show-mode-in-prompt on
 set vi-cmd-mode-string "(n) "
@@ -5,14 +16,23 @@ set vi-ins-mode-string ""
 
 set colored-stats on
 
+
+# following binds will workk in emacs mode
+set keymap emacs-standard
+
+"\C-o": clear-screen
+
+# required for fzf, althought already setup by fzf
+"\C-z": vi-editing-mode
+"\er": redraw-current-line
+"\C-g": " \C-b\C-k \C-u`__fzf_cd__`\e\C-e\er\C-m\C-y\C-h\e \C-y\ey\C-x\C-x\C-d\C-y\ey\C-_"
+
+
 # following binds will work in insert mode
 set keymap vi-insert
 
+"\e":
 ";;": vi-movement-mode
-
-# used for pane switching by vim navigator
-"\C-l":
-"\C-o": clear-screen
 
 # some emacs bindings also for vi mode
 "\C-p": previous-history
@@ -22,6 +42,10 @@ set keymap vi-insert
 "\C-b": backward-word
 "\C-f": forward-word
 "\C-w": kill-word
+"\C-z": emacs-editing-mode
+"\C-g": "\C-z\C-g\C-z"
+"\C-o": clear-screen
+
 
 # following binds will work in normal mode
 set keymap vi-command
@@ -29,3 +53,6 @@ set keymap vi-command
 "gg": beginning-of-history
 "G": end-of-history
 "q": "GA"
+"\C-z": emacs-editing-mode
+"\C-g": "\C-z\C-g\C-z"
+"\C-o": clear-screen
