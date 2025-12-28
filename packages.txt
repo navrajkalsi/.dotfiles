@@ -27,3 +27,5 @@ libmtp
 gvfs-mtp
 wf-recorder
 cmake
+jq
+ansible

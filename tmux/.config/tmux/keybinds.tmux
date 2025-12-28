@@ -37,6 +37,7 @@ bind w choose-tree
 # session
 bind q confirm-before -c Y -p "Kill Session?" kill-session
 bind d detach-client
+bind L switch-client -l
 bind : command-prompt -p "Rename Session: " "rename-session '%%'"
 
 # window

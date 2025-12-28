@@ -17,3 +17,4 @@ alias rm='rm -i' # thank yourself later
 alias grep='grep --color=auto'
 alias bc='bluetoothctl'
 alias nt='nmtui'
+alias gs='git status'
