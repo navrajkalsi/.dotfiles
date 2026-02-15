@@ -3,7 +3,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\n\[\e[1;1m\]\u \w\[\e[0m\]\n'
+# for using git branch name in prompt
+source /usr/share/git/completion/git-prompt.sh
+
+export PS1="\n\[\e[1;1m\]\u \w\$(__git_ps1 \" (%s)\")\[\e[0m\]\n"
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -35,3 +38,4 @@ export PATH+=":$HOME/.local/scripts"
 for file in "$HOME"/.config/bash/*; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+. "$HOME/.cargo/env"
