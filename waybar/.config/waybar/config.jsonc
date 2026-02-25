@@ -1,6 +1,7 @@
 {
   "layer": "top",
   "position": "bottom",
+  "reload_style_on_change": true,
   "modules-left": ["cpu", "memory", "hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
@@ -43,10 +44,15 @@
   },
 
   "battery": {
-    "format": "  {capacity}%",
+    "format": "{icon} {capacity}%",
+    // "format-icons": ["", "", "", "", ""],
+    "format-icons": {
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+    },
     "interval": 1,
     "states": {
-      "warning": 5,
+      "warning": 10,
     },
   },
 
