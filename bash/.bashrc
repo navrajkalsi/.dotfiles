@@ -31,6 +31,7 @@ export IGNOREEOF=1
 export EDITOR=nvim
 
 export PATH+=":$HOME/.local/scripts"
+export PATH+="$HOME/.local/share/nvim/site"
 
 /usr/bin/fastfetch
 
