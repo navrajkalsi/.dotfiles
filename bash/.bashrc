@@ -31,7 +31,7 @@ export IGNOREEOF=1
 export EDITOR=nvim
 
 export PATH+=":$HOME/.local/scripts"
-export PATH+="$HOME/.local/share/nvim/site"
+export PATH+=":$HOME/.local/share/nvim/site"
 
 /usr/bin/fastfetch
 
@@ -39,4 +39,5 @@ export PATH+="$HOME/.local/share/nvim/site"
 for file in "$HOME"/.config/bash/*; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
 . "$HOME/.cargo/env"
