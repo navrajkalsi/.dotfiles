@@ -41,3 +41,5 @@ for file in "$HOME"/.config/bash/*; do
 done
 
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"

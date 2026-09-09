@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 3.0.21
+###  vlc 3.0.22
 ###
 
 ###
@@ -2028,6 +2028,9 @@ qt-system-tray=0
 # Continue playback? (integer)
 #qt-continue=1
 
+# Enable Dark Mode (boolean)
+#qt-dark-palette=0
+
 # Embed the file browser in open dialog (boolean)
 #qt-embedded-open=0
 
@@ -2222,7 +2225,7 @@ qt-privacy-ask=0
 #sout-avi-subject=
 
 # Encoder (string)
-#sout-avi-encoder=VLC Media Player - 3.0.21 Vetinari
+#sout-avi-encoder=VLC Media Player - 3.0.22 Vetinari
 
 # Keywords (string)
 #sout-avi-keywords=
@@ -3148,6 +3151,9 @@ sout-x264-tune=film
 # Frames Threads (integer)
 #dav1d-thread-frames=0
 
+# All Layers (boolean)
+#dav1d-all-layers=0
+
 [x26410b] # H.264/MPEG-4 Part 10/AVC encoder (x264 10-bit)
 
 # Maximum GOP size (integer)
@@ -3499,9 +3505,6 @@ sout-x264-tune=film
 #sap-strict=0
 
 [upnp] # Universal Plug'n'Play
-
-# SAT>IP channel list (string)
-#satip-channelist=auto
 
 # Custom SAT>IP channel list URL (string)
 #satip-channellist-url=
@@ -3944,7 +3947,7 @@ audio-resampler=any
 #grayscale=0
 
 # Fullscreen video output (boolean)
-#fullscreen=0
+fullscreen=1
 
 # Embedded video (boolean)
 #embedded-video=1
